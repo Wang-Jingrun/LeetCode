@@ -10,7 +10,7 @@ class Solution
 	ListNode* reverseList(ListNode* head)
 	{
 		ListNode* pre = nullptr;    // 反转后旧头节点的前一个节点是 nullptr
-		ListNode* cur = head->next;
+		ListNode* cur = head;
 		ListNode* temp = nullptr;
 
 		while (cur != nullptr)
@@ -62,7 +62,8 @@ int main()
 		cout << "input: ";
 		linkedList1._printLinkedList();
 		cout << "output: ";
-		MyLinkedList::printLinkedList_noHead(solution.reverseList(linkedList1.head()));
+		// MyLinkedList 是带虚拟头节点实现的，因此传入传 next
+		MyLinkedList::printLinkedList_noHead(solution.reverseList(linkedList1.head()->next));
 	}
 
 	{
@@ -74,6 +75,7 @@ int main()
 		cout << "input: ";
 		linkedList2._printLinkedList();
 		cout << "output: ";
-		MyLinkedList::printLinkedList_noHead(solution.reverseList(linkedList2.head()));
+		// MyLinkedList 是带虚拟头节点实现的，因此传入传 next
+		MyLinkedList::printLinkedList_noHead(solution.reverseList(linkedList2.head()->next));
 	}
 }

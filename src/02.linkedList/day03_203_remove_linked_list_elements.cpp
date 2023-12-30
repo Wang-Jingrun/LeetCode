@@ -86,7 +86,8 @@ int main()
 		cout << "input: ";
 		linkedList1._printLinkedList();
 		cout << "output: ";
-		MyLinkedList::printLinkedList(solution.removeElements(linkedList1.head(), 6));
+		// MyLinkedList 是带虚拟头节点实现的，因此传入传 next
+		MyLinkedList::printLinkedList_noHead(solution.removeElements(linkedList1.head()->next, 6));
 	}
 
 	{
@@ -100,6 +101,7 @@ int main()
 		cout << "input: ";
 		linkedList2._printLinkedList();
 		cout << "output: ";
-		MyLinkedList::printLinkedList(solution.removeElements(linkedList2.head(), 7));
+		// MyLinkedList 是带虚拟头节点实现的，因此传入传 next
+		MyLinkedList::printLinkedList_noHead(solution.removeElements(linkedList2.head()->next, 7));
 	}
 }
