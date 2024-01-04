@@ -19,6 +19,9 @@ class Solution
 		vector<vector<int>> result;
 		sort(nums.begin(), nums.end());
 
+		// nums.size()返回的是size_t类型的，也就是无符号整型,所以它不支持负数。
+		// 当使用 nums.size()-3 进行计算时，如果结果小于0，它将会被视为一个很大的正数
+		// 因此此处虽然 nums.size()-3 逻辑正确，但是实际上会出错，除非进行强转 int(nums.size())-3
 		for (int i = 0; i < nums.size(); i++)
 		{
 			// 一级剪枝，去掉不必要的循环
