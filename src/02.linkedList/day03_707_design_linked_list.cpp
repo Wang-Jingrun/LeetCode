@@ -2,7 +2,8 @@
  * 707. 设计链表	url: https://leetcode.cn/problems/design-linked-list/
  * */
 
-#include "day03_707_design_linked_list.h"
+#include "linked_list.h"
+using namespace std;
 
 /**
  * Your MyLinkedList object will be instantiated and called as such:

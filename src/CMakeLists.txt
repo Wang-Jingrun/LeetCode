@@ -3,8 +3,10 @@ project(LeetCode)
 
 set(CMAKE_CXX_STANDARD 11)
 
-# 使用文件通配符查找所有的 .cpp 文件
-file(GLOB CPP_SOURCES "./*/*.cpp")
+file(GLOB_RECURSE SOURCES "02.linkedList/linked_list.cpp" "06.binary_tree/binary_tree.cpp")
+
+# 使用文件通配符查找符合条件的 .cpp 文件
+file(GLOB CPP_SOURCES "./*/day*.cpp")
 
 # 遍历所有的 .cpp 文件，为每个文件创建可执行文件
 foreach(CPP_FILE ${CPP_SOURCES})
@@ -12,5 +14,5 @@ foreach(CPP_FILE ${CPP_SOURCES})
     get_filename_component(FILE_NAME ${CPP_FILE} NAME_WE)
 
     # 添加可执行文件
-    add_executable(${FILE_NAME} ${CPP_FILE})
+    add_executable(${FILE_NAME} ${SOURCES} ${CPP_FILE})
 endforeach()
