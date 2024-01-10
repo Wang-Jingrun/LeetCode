@@ -55,6 +55,36 @@ bool BinaryTree::isEmpty()
 	return m_root == nullptr;
 }
 
+std::vector<std::vector<int>> BinaryTree::levelOrder()
+{
+	if (m_root == nullptr) return {};
+
+	std::vector<std::vector<int>> result;
+	std::vector<int> layers;
+	std::queue<TreeNode*> queue;
+	queue.push(m_root);
+	int size;    // 通过 size 记录每层的节点数
+
+	while (!queue.empty())
+	{
+		size = queue.size();
+
+		for (int i = size; i > 0; --i)
+		{
+			auto node = queue.front();
+			queue.pop();
+
+			layers.push_back(node->val);
+			if (node->left != nullptr) queue.push(node->left);
+			if (node->right != nullptr) queue.push(node->right);
+		}
+		result.push_back(layers);
+		layers.clear();
+	}
+
+	return result;
+}
+
 // 递归遍历二叉树，返回树的内容的字符串形式
 std::string BinaryTree::str(TreeNode* root) const
 {

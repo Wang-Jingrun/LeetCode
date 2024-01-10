@@ -28,6 +28,9 @@ class BinaryTree
 	TreeNode* root();
 	bool isEmpty();
 
+	// 层序遍历
+	std::vector<std::vector<int>> levelOrder();
+
 	// 递归遍历二叉树，返回树的内容的字符串形式
 	std::string str(TreeNode* root) const;
 
