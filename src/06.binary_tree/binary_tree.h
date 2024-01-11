@@ -20,10 +20,13 @@ class BinaryTree
 {
  public:
 	BinaryTree();
-	BinaryTree(std::vector<int>& nums); // -1 表示空节点
+	BinaryTree(const std::vector<int>& nums); // -1 表示空节点
 	~BinaryTree();
 
+	void clear(TreeNode* root);
+
 	// todo 拷贝构造，拷贝复制
+	BinaryTree& operator=(const std::vector<int>& nums);
 
 	TreeNode* root();
 	bool isEmpty();
@@ -40,9 +43,6 @@ class BinaryTree
 		os << tree.str(tree.m_root);
 		return os;
 	}
-
- private:
-	void _destroy(TreeNode* root);
 
  private:
 	TreeNode* m_root;

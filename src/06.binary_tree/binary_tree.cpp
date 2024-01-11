@@ -4,16 +4,35 @@ BinaryTree::BinaryTree() : m_root(nullptr)
 {
 }
 
-BinaryTree::~BinaryTree()
+BinaryTree::BinaryTree(const std::vector<int>& nums) : m_root(nullptr)
 {
-	_destroy(m_root);
+	*this = nums;
 }
 
-BinaryTree::BinaryTree(std::vector<int>& nums) : m_root(nullptr)
+BinaryTree::~BinaryTree()
 {
+	clear(m_root);
+}
+
+void BinaryTree::clear(TreeNode* root)
+{
+	if (root != nullptr)
+	{
+		clear(root->left);
+		clear(root->right);
+		// std::cout << "delete:" << root->val << " ";
+		delete root;
+		root = nullptr;
+	}
+}
+
+BinaryTree& BinaryTree::operator=(const std::vector<int>& nums)
+{
+	clear(m_root);
+
 	// -1 表示空节点
 	if (nums.empty() || nums[0] == -1)
-		return;
+		return *this;
 
 	m_root = new TreeNode(nums[0]);
 	std::queue<TreeNode*> nodes;
@@ -43,6 +62,7 @@ BinaryTree::BinaryTree(std::vector<int>& nums) : m_root(nullptr)
 
 		++i;
 	}
+	return *this;
 }
 
 TreeNode* BinaryTree::root()
@@ -103,16 +123,4 @@ std::string BinaryTree::str(TreeNode* root) const
 	}
 
 	return ss.str();
-}
-
-void BinaryTree::_destroy(TreeNode* root)
-{
-	if (root != nullptr)
-	{
-		_destroy(root->left);
-		_destroy(root->right);
-		// std::cout << "delete:" << root->val << " ";
-		delete root;
-		root = nullptr;
-	}
 }

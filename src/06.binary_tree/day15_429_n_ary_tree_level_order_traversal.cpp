@@ -51,7 +51,41 @@ class Solution
 
 int main()
 {
-	// todo n叉树
+	Solution solution;
+	std::vector<int> nums;
+	std::vector<vector<int>> result;
+
+	{
+		// -1 表示null节点
+		nums = { 1,-1,2,3,4,5,-1,-1,6,7,-1,8,-1,9,10,-1,-1,11,-1,12,-1,13,-1,-1,14 };
+		NAryTree tree(nums);
+		cout << "exp1 ([";
+		result = tree.levelOrder();
+		for (auto its : result)
+		{
+			cout << "[ ";
+			for (auto it : its)
+			{
+				cout << it << " ";
+			}
+			cout << "]";
+		}
+		cout << "])" << endl;
+
+		cout << "result: ";
+		result = solution.levelOrder(tree.root());
+		cout << "[";
+		for (auto its : result)
+		{
+			cout << "[ ";
+			for (auto it : its)
+			{
+				cout << it << " ";
+			}
+			cout << "]";
+		}
+		cout << "]" << endl;
+	}
 
 	return 0;
 }

@@ -47,9 +47,36 @@ class Solution
 	}
 };
 
+class Solution2	// 递归法
+{
+ public:
+	int getDepth(TreeNode* node)
+	{
+		int depth = 0;
+
+		if (node == nullptr) return 0;
+		int leftDepth = getDepth(node->left);
+		int rightDepth = getDepth(node->right);
+
+		// 左右孩子都为空的节点才是叶子节点！
+		// 计算的左右子树深度都为 0 才表示最小深度为 0，否则是非叶子节点
+		// 也就是 左右深度只有一个 0 并不代表最小深度为 0，直接 min 会出错
+		if (leftDepth == 0) depth = rightDepth;
+		else if (rightDepth == 0) depth = leftDepth;
+		else depth = min(leftDepth, rightDepth);
+
+		return depth + 1;
+	}
+
+	int minDepth(TreeNode* root)
+	{
+		return getDepth(root);
+	}
+};
+
 int main()
 {
-	Solution solution;
+	Solution2 solution;
 	vector<int> nums;
 
 	{
@@ -67,6 +94,16 @@ int main()
 		nums = { 1, 2, 3, 4, 5 };
 		BinaryTree tree(nums);
 		cout << "exp2 (2): " << endl;
+		cout << "input tree: " << tree << endl;
+
+		cout << "result: " << solution.minDepth(tree.root()) << endl;
+	}
+
+	{
+		// -1 表示null节点
+		nums = { 2, -1, 3, -1, 4, -1, 5, -1, 6 };
+		BinaryTree tree(nums);
+		cout << "exp3 (5): " << endl;
 		cout << "input tree: " << tree << endl;
 
 		cout << "result: " << solution.minDepth(tree.root()) << endl;

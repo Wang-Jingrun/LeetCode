@@ -42,6 +42,25 @@ class Solution
 	}
 };
 
+class Solution2	// 递归法
+{
+ public:
+	int getDepth(TreeNode* node)
+	{
+		if (node == nullptr) return 0;
+		int leftDepth = getDepth(node->left);
+		int rightDepth = getDepth(node->right);
+
+		// 加1是因为算上当前中间节点
+		return max(leftDepth, rightDepth) + 1;
+	}
+
+	int maxDepth(TreeNode* root)
+	{
+		return getDepth(root);
+	}
+};
+
 int main()
 {
 	Solution solution;
