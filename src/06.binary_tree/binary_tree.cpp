@@ -4,6 +4,11 @@ BinaryTree::BinaryTree() : m_root(nullptr)
 {
 }
 
+BinaryTree::BinaryTree(TreeNode* root)
+{
+	m_root = root;
+}
+
 BinaryTree::BinaryTree(const std::vector<int>& nums) : m_root(nullptr)
 {
 	*this = nums;

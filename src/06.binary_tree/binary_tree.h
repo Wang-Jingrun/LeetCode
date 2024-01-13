@@ -20,6 +20,7 @@ class BinaryTree
 {
  public:
 	BinaryTree();
+	BinaryTree(TreeNode* root);
 	BinaryTree(const std::vector<int>& nums); // -1 表示空节点
 	~BinaryTree();
 

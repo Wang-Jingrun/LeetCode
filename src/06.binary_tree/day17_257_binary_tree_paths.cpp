@@ -75,14 +75,8 @@ class Solution2
 			result.push_back(path);
 			return;
 		}
-		if (cur->left) {
-			path += "->";
-			traversal(cur->left, path, result); // 左
-		}
-		if (cur->right) {
-			path += "->";
-			traversal(cur->right, path, result); // 右
-		}
+		if (cur->left) traversal(cur->left, path + "->", result); // 左
+		if (cur->right) traversal(cur->right, path + "->", result); // 右
 	}
 
  public:

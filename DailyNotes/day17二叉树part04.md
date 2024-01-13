@@ -253,6 +253,7 @@ class Solution
 class Solution2
 {
  private:
+
 	// 回溯隐藏在 string path 中，每次拷贝传值
 	void traversal(TreeNode* cur, string path, vector<string>& result)
 	{
@@ -331,10 +332,6 @@ if (cur->right) {
 ```
 
 **如果把 `path + "->"`作为函数参数就是可以的，因为并没有改变path的数值，执行完递归函数之后，path依然是之前的数值（相当于回溯了）**
-
-```C++
-
-```
 
 ### 404.左叶子之和
 [LeetCode](https://leetcode.cn/problems/sum-of-left-leaves/)  [文章讲解](https://programmercarl.com/0404.%E5%B7%A6%E5%8F%B6%E5%AD%90%E4%B9%8B%E5%92%8C.html)  [视频讲解](https://www.bilibili.com/video/BV1GY4y1K7z8/)
