@@ -1,4 +1,4 @@
-## Day19: 二叉树part06
+## Day20: 二叉树part06
 
 ### 654. 最大二叉树
 [LeetCode](https://leetcode.cn/problems/maximum-binary-tree/)  [文章讲解](https://programmercarl.com/0654.%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91.html)  [视频讲解](https://www.bilibili.com/video/BV1MG411G7ox/)
@@ -319,7 +319,39 @@ class Solution2
 中序遍历下，输出的二叉搜索树节点的数值是有序序列。有了这个特性，**验证二叉搜索树，就相当于变成了判断一个序列是不是递增的了。**
 
 ```C++
+class Solution
+{
+ private:
+	vector<int> m_vec;
 
+	void inorderTraversal(TreeNode* cur)
+	{
+		if (cur == nullptr) return;
+
+		inorderTraversal(cur->left);
+		m_vec.push_back(cur->val);
+		inorderTraversal(cur->right);
+	}
+
+ public:
+	bool isValidBST(TreeNode* root)
+	{
+		if (root == nullptr) return true;
+
+		m_vec.clear();
+		inorderTraversal(root);
+
+		for (int i = 1; i < m_vec.size(); ++i)
+		{
+			if (m_vec[i] <= m_vec[i - 1])
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+};
 ```
 
 #### 递归法
