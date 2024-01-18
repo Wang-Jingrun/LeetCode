@@ -30,6 +30,7 @@ class BinaryTree
 	BinaryTree& operator=(const std::vector<int>& nums);
 
 	TreeNode* root();
+	void root(TreeNode* root);
 	bool isEmpty();
 
 	// 层序遍历

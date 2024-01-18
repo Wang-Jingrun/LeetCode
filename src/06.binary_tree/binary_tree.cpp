@@ -75,6 +75,11 @@ TreeNode* BinaryTree::root()
 	return m_root;
 }
 
+void BinaryTree::root(TreeNode* root)
+{
+	m_root = root;
+}
+
 bool BinaryTree::isEmpty()
 {
 	return m_root == nullptr;
