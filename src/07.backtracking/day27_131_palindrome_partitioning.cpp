@@ -60,26 +60,23 @@ int main()
 {
 
 	Solution solution;
-	vector<int> candidates;
-	vector<vector<int>> result;
 
 	{
-//		cout << "exp1 ([[2,2,2,2],[2,3,3],[3,5]]): " << endl;
-//
-//		cout << "result: ";
-//		candidates = { 2, 3, 5 };
-//		result = solution.combinationSum(candidates, 8);
-//		cout << "[";
-//		for (const auto& nums : result)
-//		{
-//			cout << "[ ";
-//			for (auto num : nums)
-//			{
-//				cout << num << " ";
-//			}
-//			cout << "]";
-//		}
-//		cout << "]" << endl;
+		cout << R"(exp1 ([["a","a","b"],["aa","b"]]): )" << endl;
+
+		cout << "result: ";
+		auto result = solution.partition("aab");
+		cout << "[";
+		for (const auto& strs : result)
+		{
+			cout << "[ ";
+			for (const auto& str : strs)
+			{
+				cout << str << " ";
+			}
+			cout << "]";
+		}
+		cout << "]" << endl;
 	}
 
 	cout << endl;
