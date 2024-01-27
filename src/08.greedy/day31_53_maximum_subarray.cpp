@@ -33,7 +33,6 @@ int main()
 {
 	Solution solution;
 	vector<int> nums;
-	vector<int> s;
 
 	cout << "exp1 (6): ";
 	nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
