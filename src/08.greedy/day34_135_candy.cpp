@@ -13,43 +13,23 @@
 #include <algorithm>
 using namespace std;
 
-class Solution
-{
+class Solution {
  public:
-	int candy(vector<int>& ratings)
-	{
-		int result = 1;
-		for (int i = 1; i < ratings.size();)
-		{
-			// 左低右高
-			if (ratings[i] < ratings[i - 1])
-			{
-				int num = 2;
-				while (i < ratings.size() && ratings[i] < ratings[i - 1])
-				{
-					result += num;
-					num++;
-					i++;
-				}
-			}
-
-				// 左高右低
-			else if (ratings[i] > ratings[i - 1])
-			{
-				int index = i - 1;
-				while (i < ratings.size() && ratings[i] > ratings[i - 1])
-				{
-					result += i - index + 1;
-					i++;
-				}
-			}
-			else
-			{
-				result++;
-				i++;
+	int candy(vector<int>& ratings) {
+		vector<int> candyVec(ratings.size(), 1);
+		// 从前向后
+		for (int i = 1; i < ratings.size(); i++) {
+			if (ratings[i] > ratings[i - 1]) candyVec[i] = candyVec[i - 1] + 1;
+		}
+		// 从后向前
+		for (int i = ratings.size() - 2; i >= 0; i--) {
+			if (ratings[i] > ratings[i + 1] ) {
+				candyVec[i] = max(candyVec[i], candyVec[i + 1] + 1);
 			}
 		}
-
+		// 统计结果
+		int result = 0;
+		for (int i = 0; i < candyVec.size(); i++) result += candyVec[i];
 		return result;
 	}
 };
