@@ -8,7 +8,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
-#include "n_ary_tree.h"
+#include <n_ary_tree.h>
 
 using namespace std;
 

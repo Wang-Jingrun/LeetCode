@@ -2,7 +2,8 @@
  * 206. 反转链表	url: https://leetcode.cn/problems/reverse-linked-list/
  * */
 
-#include "day03_707_design_linked_list.h"
+#include <linked_list.h>
+using namespace std;
 
 class Solution
 {

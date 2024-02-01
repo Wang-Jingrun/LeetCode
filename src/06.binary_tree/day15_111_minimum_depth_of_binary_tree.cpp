@@ -5,7 +5,7 @@
  * 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
  * */
 
-#include "binary_tree.h"
+#include <binary_tree.h>
 #include <vector>
 #include <iostream>
 #include <algorithm>

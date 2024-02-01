@@ -6,7 +6,7 @@
  * 		一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1 。
  * */
 
-#include "binary_tree.h"
+#include <binary_tree.h>
 #include <vector>
 #include <iostream>
 #include <algorithm>

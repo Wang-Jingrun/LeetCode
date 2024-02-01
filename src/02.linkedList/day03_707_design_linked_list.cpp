@@ -2,7 +2,7 @@
  * 707. 设计链表	url: https://leetcode.cn/problems/design-linked-list/
  * */
 
-#include "linked_list.h"
+#include <linked_list.h>
 using namespace std;
 
 /**

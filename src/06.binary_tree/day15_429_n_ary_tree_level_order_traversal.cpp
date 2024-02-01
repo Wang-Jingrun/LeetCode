@@ -5,7 +5,7 @@
  * 树的序列化输入是用层序遍历，每组子节点都由 null 值分隔。
  * */
 
-#include "n_ary_tree.h"
+#include <n_ary_tree.h>
 #include <vector>
 #include <iostream>
 #include <algorithm>

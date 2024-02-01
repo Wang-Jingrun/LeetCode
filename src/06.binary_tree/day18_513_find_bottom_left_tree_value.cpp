@@ -5,7 +5,7 @@
  * 假设二叉树中至少有一个节点。
  * */
 
-#include "binary_tree.h"
+#include <binary_tree.h>
 #include <vector>
 #include <iostream>
 #include <algorithm>

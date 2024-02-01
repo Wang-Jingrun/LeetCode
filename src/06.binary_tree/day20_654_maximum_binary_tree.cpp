@@ -8,7 +8,7 @@
  * 返回 nums 构建的 最大二叉树 。
  * */
 
-#include "binary_tree.h"
+#include <binary_tree.h>
 #include <vector>
 #include <iostream>
 #include <algorithm>

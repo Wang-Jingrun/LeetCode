@@ -6,8 +6,10 @@
  * */
 
 #include <vector>
-#include "day03_707_design_linked_list.h"
 #include <stack>
+#include <linked_list.h>
+using namespace std;
+
 class Solution
 {
  public:

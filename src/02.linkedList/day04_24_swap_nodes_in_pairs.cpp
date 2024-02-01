@@ -5,7 +5,8 @@
  * 你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
  * */
 
-#include "day03_707_design_linked_list.h"
+#include <linked_list.h>
+using namespace std;
 
 class Solution
 {

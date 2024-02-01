@@ -9,7 +9,7 @@
  * 注意: 合并过程必须从两个树的根节点开始。
  * */
 
-#include "binary_tree.h"
+#include <binary_tree.h>
 #include <vector>
 #include <iostream>
 #include <algorithm>

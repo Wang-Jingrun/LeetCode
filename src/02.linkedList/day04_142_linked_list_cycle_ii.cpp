@@ -8,7 +8,8 @@
  * */
 
 #include <vector>
-#include "day03_707_design_linked_list.h"
+#include <linked_list.h>
+using namespace std;
 
 class Solution
 {

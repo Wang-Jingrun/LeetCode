@@ -2,7 +2,8 @@
  * 203. 移除链表元素	url: https://leetcode.cn/problems/remove-linked-list-elements/
  * */
 
-#include "day03_707_design_linked_list.h"
+#include <linked_list.h>
+using namespace std;
 
 class Solution
 {

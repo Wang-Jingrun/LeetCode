@@ -3,6 +3,8 @@ project(LeetCode)
 
 set(CMAKE_CXX_STANDARD 11)
 
+include_directories("./lib")
+
 file(GLOB_RECURSE SOURCES "02.linkedList/linked_list.cpp" "06.binary_tree/binary_tree.cpp"
         "06.binary_tree/n_ary_tree.cpp")
 
