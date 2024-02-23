@@ -14,7 +14,7 @@ using namespace std;
 class Solution
 {
  public:
-	bool wordBreak(string s, vector<string>& wordDict)
+	bool wordBreak(const string& s, vector<string>& wordDict)
 	{
 		vector<bool> dp(s.size() + 1, false);
 		dp[0] = true;
@@ -26,7 +26,7 @@ class Solution
 				if (wordDict[j].size() > i) continue;
 
 				if (dp[i - wordDict[j].size()]
-				&& s.substr(i - wordDict[j].size(), wordDict[j].size()) == wordDict[j])
+					&& s.substr(i - wordDict[j].size(), wordDict[j].size()) == wordDict[j])
 				{
 					dp[i] = true;
 				}
@@ -40,9 +40,11 @@ class Solution
 int main()
 {
 	Solution solution;
+	vector<string> wordDict;
 
 	{
-		cout << "exp1 (3): " << endl;
-		cout << "result: " << solution.numSquares(12) << endl;
+		wordDict = { "leet", "code" };
+		cout << "exp1 (true): " << endl;
+		cout << "result: " << solution.wordBreak("leetcode", wordDict) << endl;
 	}
 }
